@@ -1,7 +1,7 @@
 
 ## Getting Started
 
-install zmq
+install zmq 4.0.4
 * Linux: `sudo apt-get install libzmq3-dev`
 * OSX: `brew install zmq`
 * Windows: `http://zeromq.org/distro:microsoft-windows`
@@ -14,6 +14,10 @@ change zeromq build target
 
 install dependencies:
 `npm install`
+
+edit main.js python path to one of these:
+`const pythonthree = 'python'`
+`const pythonthree = 'python3'` 
 
 run electron 
 `npm start`

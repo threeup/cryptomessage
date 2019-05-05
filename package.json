@@ -1,14 +1,14 @@
 {
-  "name": "Electron-Python-Example",
+  "name": "CryptoMessage",
   "version": "0.1.0",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
   "devDependencies": {
-    "electron": "^2.0.7"
+    "electron": "2.0.18"
   },
   "dependencies": {
-    "zerorpc": "^0.9.7"
+    "zerorpc": "0.9.8"
   }
 }

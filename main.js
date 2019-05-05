@@ -4,6 +4,8 @@ const ipc = require('electron').ipcMain;
 const fs = require('fs');
 const { spawn } = require('child_process');
 const { myConsole } = require('./utils/helpers.js');
+const pythonthree = 'python'
+
 
 let ui;
 let spawnedChild;
@@ -32,7 +34,7 @@ app.on('ready', () => {
 });
 
 function spawnPythonServer() {
-    spawnedChild = spawn('python3',  ['-i', 'backend.py']);
+    spawnedChild = spawn(pythonthree,  ['-i', 'backend.py']);
     spawnedChild.on('close', (code, signal) => {
         console.log(`child error: ${code}, ${signal}`);
     });
