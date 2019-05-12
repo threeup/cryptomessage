@@ -29,14 +29,18 @@ class messageCore():
         if self.netsocket is not None:
             msg = self.netsocket.recv(1024)  
             asciimsg = msg.strip().decode('ascii')
-            print (">> " + asciimsg)
+            print ("<< " + asciimsg)
             sys.stdout.flush()
         return asciimsg
         
-    def get_send(self, name):
-        print("get_send...",name)
-        sys.stdout.flush()
-        return f'send, {name}'
+    def get_send(self, content):
+        if self.netsocket is not None and content is not None:
+            datamsg = content.encode()
+            self.netsocket.send(datamsg)
+            print (">> " + content)
+            sys.stdout.flush()
+            return 'succeed'
+        return 'fail'
 
 
     def get_test(self):
